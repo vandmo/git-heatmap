@@ -19,7 +19,7 @@ jobs:
           tags: the-image
 
       - name: Test simple execution of git heatmap
-        run: docker run --rm the-image -h
+        run: docker run --rm the-image git heatmap -h
 
   release:
     needs: test
