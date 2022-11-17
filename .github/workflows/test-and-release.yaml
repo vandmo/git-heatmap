@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set Versions
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: set_version
         with:
           script: |
@@ -43,9 +43,11 @@ jobs:
             const major = parts[0]
             const minor = parts[1]
             const subminor = parts[2]
-            core.setOutput('major', major)
-            core.setOutput('major-minor', `${major}.${minor}`)
-            core.setOutput('major-minor-subminor', `${major}.${minor}.${subminor}`)
+            return {
+              'major': major,
+              'major-minor': `${major}.${minor}`,
+              'major-minor-subminor': `${major}.${minor}.${subminor}`
+            }
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
@@ -59,6 +61,6 @@ jobs:
           push: true
           tags: |
             ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:latest
-            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.major}}
-            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.major-minor}}
-            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.major-minor-subminor}}
+            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.result.major}}
+            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.result.major-minor}}
+            ${{secrets.DOCKERHUB_USERNAME}}/git-heatmap:${{steps.set_version.outputs.result.major-minor-subminor}}

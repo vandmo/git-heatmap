@@ -12,6 +12,8 @@ RUN apt-get update &&\
   krb5-config\
   libkrb5-dev\
   g++\
+  libssl-dev\
+  libcurl4-openssl-dev\
   file &&\
  rm -rf /var/lib/apt/lists/*
 
