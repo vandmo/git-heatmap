@@ -17,7 +17,7 @@ RUN apt-get update &&\
   file &&\
  rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g git-heatmap && chmod +x /usr/local/bin/git-heatmap
+RUN npm install -g https://github.com/jez/bars.git && npm install -g git-heatmap && chmod +x /usr/local/bin/git-heatmap
 
 ENTRYPOINT []
 CMD ["git", "heatmap"]
