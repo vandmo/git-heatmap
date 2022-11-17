@@ -1,6 +1,6 @@
 FROM node:bullseye-slim@sha256:ea46185af8498b01a0af84e32c8b17933944e2444e1bee7602ef74bf6c758c0a
 
-MAINTAINER Mikael Vandmo <mikael@vandmo.se>
+LABEL org.opencontainers.image.authors="Mikael Vandmo <mikael@vandmo.se>"
 
 RUN apt-get update &&\
  DEBIAN_FRONTEND="noninteractive"\
