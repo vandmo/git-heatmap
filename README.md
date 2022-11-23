@@ -4,10 +4,16 @@
 
 Dockerization of https://github.com/jez/git-heatmap
 
-Examples:
+## Examples
 
+### Oneliner
 ```sh
-docker run --rm -v "${PWD}":/local bash
+docker run --rm -t --workdir=/local -v "${PWD}":/local vandmo/git-heatmap
+```
+
+### Interactive
+```sh
+docker run --rm -it -v "${PWD}":/local vandmo/git-heatmap bash
 cd /local
 git heatmap
 ```
