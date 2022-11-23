@@ -7,5 +7,7 @@ Dockerization of https://github.com/jez/git-heatmap
 Examples:
 
 ```sh
-docker run --rm -v "${PWD}":/local vandmo/git-heatmap /local
+docker run --rm -v "${PWD}":/local bash
+cd /local
+git heatmap
 ```
