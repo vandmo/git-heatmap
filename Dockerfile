@@ -15,6 +15,7 @@ RUN apt-get update &&\
   libssl-dev\
   libcurl4-openssl-dev\
   file &&\
+  man &&\
  rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g https://github.com/jez/bars.git && npm install -g git-heatmap && chmod +x /usr/local/bin/git-heatmap
