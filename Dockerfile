@@ -1,4 +1,4 @@
-FROM node:bullseye-slim@sha256:ea46185af8498b01a0af84e32c8b17933944e2444e1bee7602ef74bf6c758c0a
+FROM node:bullseye-slim@sha256:8bd7c600b3f68cbe773f4f0b236de52bb2c65a34966921b8bb4c73eaee38e540
 
 LABEL org.opencontainers.image.authors="Mikael Vandmo <mikael@vandmo.se>"
 
